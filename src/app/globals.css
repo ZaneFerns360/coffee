@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #f3f0e9;
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ffffff;
+    --background: #f3f0e9;
     --foreground: #171717;
   }
 }
@@ -24,4 +24,22 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@font-face {
+  font-family: "Sellviny";
+  src: url("/fonts/Sellviny\ Queen.otf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sharp";
+  src: url("/fonts/SharpGrotesk-Medium15.otf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rose";
+  src: url("/fonts/Rose2.woff2");
+  font-style: normal;
 }
