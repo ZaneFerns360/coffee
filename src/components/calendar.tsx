@@ -60,7 +60,7 @@ const CalendarComponent = () => {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col bg-black text-red-800 overflow-hidden">
+    <div className="w-full px-20  h-screen flex flex-col  bg-[#F3F0E9]  text-red-800 overflow-hidden">
       <div className="flex justify-between items-center bg-[#F3F0E9] px-4 sm:px-6 py-2 sm:py-4">
         <button className="text-red-800 hover:text-red-200 transition-colors">
           <ChevronLeft size={24} />

@@ -24,7 +24,7 @@ const fontRose = Lato({
 function Navbar() {
   return (
     <nav
-      className={`${latoLight.className} flex items-center justify-between p-6 w-full bg-[#F3F0E9] shadow-lg z-10`}
+      className={`${latoLight.className} flex items-center justify-between p-6 w-full  bg-[#F3F0E9]  shadow-lg z-10`}
       style={{ height: "80px" }}
     >
       <a href="/" className="flex items-center">
@@ -82,7 +82,7 @@ function Navbar() {
 
 export default function NavbarWithVideo() {
   return (
-    <div>
+    <div className="">
       <div className="relative w-full h-screen">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover -z-10"
@@ -101,9 +101,9 @@ export default function NavbarWithVideo() {
         <Navbar />
       </div>
 
-      <div className="w-full p-12 text-center text-sm text-red-800">
+      <div className="w-full p-12 text-center  bg-[#F3F0E9] text-sm text-red-800">
         <p className={` font-sell text-8xl scale-125`}>Welcome</p>
-        <div className={`  ${latoLight.className} text-3xl `}>
+        <div className={` bg-[#F3F0E9] ${latoLight.className} text-3xl `}>
           <p>
             We’re a members-only club devoted to the art of the dinner party.
           </p>
@@ -121,7 +121,7 @@ export default function NavbarWithVideo() {
         </div>
       </div>
 
-      <div className="flex flex-row justify-center items-center px-12 py-16 bg-deep-rust">
+      <div className="flex flex-row  bg-[#F3F0E9] justify-center items-center px-12 py-16 bg-deep-rust">
         <div className="flex justify-center items-center">
           <Image
             src="/eat.webp"
@@ -140,7 +140,7 @@ export default function NavbarWithVideo() {
           <p className="text-sm text-center font-bold pt-3">LEARN MORE</p>
         </div>
       </div>
-      <div className="px-20 max-h-24 scale-100">
+      <div className=" max-h-24 scale-100">
         <CalendarComponent />
       </div>
     </div>
