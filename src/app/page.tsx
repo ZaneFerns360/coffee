@@ -1,101 +1,107 @@
 import Image from "next/image";
+import { Search } from "lucide-react";
+import { Lato } from "next/font/google";
 
-export default function Home() {
+const latoLight = Lato({
+  weight: "300",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const latoNormal = Lato({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+function Navbar() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <nav
+      className={`${latoLight.className} flex items-center justify-between p-6 w-full bg-white shadow-lg z-10`}
+      style={{ height: "80px" }}
+    >
+      <a href="/" className="flex items-center">
         <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src="https://ettarracoffee.in/wp-content/uploads/2023/07/WhatsApp_Image_2023-07-31_at_2.58.23_PM-removebg-preview-e1704895455691.png"
+          alt="Logo"
+          width={250}
+          height={250}
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      </a>
+      <div className="flex items-center gap-12 w-full justify-center">
+        <div className="relative w-1/3">
+          <input
+            type="text"
+            placeholder="Search"
+            className="border border-gray-300 rounded-lg pl-10 pr-4 py-3 w-full focus:outline-none focus:border-red-500"
+          />
+          <Search className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-400" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+        <ul className="flex gap-8 text-red-500 text-lg">
+          <li className="hover:text-red-700 transition duration-200 ease-in-out">
+            <a href="/story">STORY</a>
+          </li>
+          <li className="hover:text-red-700 transition duration-200 ease-in-out">
+            <a href="/chapters">CHAPTERS</a>
+          </li>
+          <li className="hover:text-red-700 transition duration-200 ease-in-out">
+            <a href="/events">EVENTS</a>
+          </li>
+          <li className="hover:text-red-700 transition duration-200 ease-in-out">
+            <a href="/memberships">MEMBERSHIPS</a>
+          </li>
+          <li className="hover:text-red-700 transition duration-200 ease-in-out">
+            <a href="/partnerships">PARTNERSHIPS</a>
+          </li>
+        </ul>
+      </div>
+      <div className="flex gap-4 items-center">
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/login"
+          className="text-red-500 hover:text-red-700 transition duration-200 ease-in-out"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          Login
         </a>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/apply"
+          className="bg-red-500 text-white px-4 py-3 rounded-lg hover:bg-red-700 transition duration-200 ease-in-out"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
+          Apply
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+    </nav>
+  );
+}
+
+export default function NavbarWithVideo() {
+  return (
+    <div>
+      <div className="relative w-full h-screen">
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+          src="https://res.cloudinary.com/dknwhnbg4/video/upload/q_auto/v1682009187/erja8ylt7irzyibuyqjk.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+        <Navbar />
+      </div>
+
+      <div className="w-full p-12 bg-white text-center text-sm text-[#b7410e]">
+        <p>Welcome</p>
+        <p>We’re a members-only club devoted to the art of the dinner party.</p>
+        <p>
+          At The Supper Club, we surprise and delight our community by hosting
+          exquisite dining experiences in spectacular settings around the world.
+        </p>
+        <p>
+          We know that time is our members’ most precious resource. Our
+          immersive events invite members to savor the best things in life:
+          incredible food, inspiring conversations, and the joy of new
+          connections.
+        </p>
+      </div>
     </div>
   );
 }
